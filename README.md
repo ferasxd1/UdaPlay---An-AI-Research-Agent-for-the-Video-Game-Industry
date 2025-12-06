@@ -93,11 +93,11 @@ cd UdaPlay---An-AI-Research-Agent-for-the-Video-Game-Industry
 
 2. **Install dependencies:**
 ```bash
-pip install -r requirements.txt
+pip install -r UdaPlay_Project_Submission/requirements.txt
 ```
 
 3. **Set up environment variables:**
-Create a `.env` file in the root directory:
+Create a `.env` file in `UdaPlay_Project_Submission/`:
 ```env
 OPENAI_API_KEY="your-openai-api-key"
 CHROMA_OPENAI_API_KEY="your-openai-api-key"
@@ -107,10 +107,10 @@ TAVILY_API_KEY="your-tavily-api-key"
 4. **Run the notebooks:**
 ```bash
 # First, run Part 1 to set up the RAG pipeline
-jupyter notebook notebooks/Udaplay_01_solution_project.ipynb
+jupyter notebook UdaPlay_Project_Submission/Udaplay_01_solution_project.ipynb
 
 # Then, run Part 2 to test the agent
-jupyter notebook notebooks/Udaplay_02_solution_project.ipynb
+jupyter notebook UdaPlay_Project_Submission/Udaplay_02_solution_project.ipynb
 ```
 
 ---
@@ -125,34 +125,33 @@ UdaPlay-AI-Agent/
 ├── 📄 .env.example                                 # Environment template
 ├── 🔒 .gitignore                                   # Git ignore rules
 │
-├── 📁 datasets/                                    # Game data
-│   ├── 001.json                                    # Gran Turismo
-│   ├── 002.json                                    # Pokémon Gold/Silver
-│   ├── 003.json                                    # Super Mario 64
-│   └── ... (12 more games)                         # Total: 15 games
+├── 📁 Code/                                        # Course materials & project
+│   ├── module_01_Extending_Agents_with_Tools/
+│   ├── module_02_Structured_Outputs/
+│   ├── module_03_State_Management/
+│   ├── module_04_Short_Term_Memory/
+│   ├── module_05_External_APIs/
+│   ├── module_06_Web_Search_Agents/
+│   ├── module_07_Interacting_with_Databases/
+│   ├── module_08_Agentic_RAG/
+│   ├── module_09_Long-term_Memory/
+│   ├── module_10_Evaluating_Agents/
+│   └── 📁 project/
+│       └── starter/
+│           ├── Udaplay_01_starter_project.ipynb
+│           ├── Udaplay_02_starter_project.ipynb
+│           ├── games/                              # Game data
+│           └── lib/                                # Helper libraries
 │
-├── 📁 notebooks/                                   # Jupyter notebooks
-│   ├── Udaplay_01_solution_project.ipynb          # Part 1: RAG Pipeline
-│   └── Udaplay_02_solution_project.ipynb          # Part 2: Agent Implementation
-│
-├── 📁 src/                                         # Source code
-│   ├── __init__.py
-│   ├── agents.py                                   # Agent implementation
-│   ├── llm.py                                      # LLM wrapper
-│   ├── state_machine.py                            # State machine logic
-│   ├── tooling.py                                  # Tool definitions
-│   ├── rag.py                                      # RAG utilities
-│   ├── vector_db.py                                # ChromaDB interface
-│   ├── evaluation.py                               # Evaluation logic
-│   ├── messages.py                                 # Message types
-│   ├── parsers.py                                  # Output parsers
-│   ├── memory.py                                   # Memory management
-│   ├── loaders.py                                  # Data loaders
-│   └── documents.py                                # Document handling
-│
-└── 📦 UdaPlay_Project_Submission/                 # Original submission package
+└── 📦 UdaPlay_Project_Submission/                 # Solution & submission
+    ├── Udaplay_01_solution_project.ipynb          # Part 1: RAG Pipeline
+    ├── Udaplay_02_solution_project.ipynb          # Part 2: Agent
     ├── Udaplay_01_solution_project.html           # HTML with outputs
     ├── Udaplay_02_solution_project.html           # HTML with outputs
+    ├── games/                                      # 15 game JSON files
+    ├── lib/                                        # 13 Python helper files
+    ├── requirements.txt
+    ├── .env.example
     └── PROJECT_SUBMISSION_README.md               # Detailed documentation
 ```
 
