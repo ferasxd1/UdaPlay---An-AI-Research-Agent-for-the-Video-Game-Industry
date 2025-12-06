@@ -52,8 +52,8 @@ UdaPlay is an AI Research Agent capable of:
 
 1. **Clone the repository:**
 ```bash
-git clone https://github.com/YOUR_USERNAME/udaplay-ai-agent.git
-cd udaplay-ai-agent
+git clone https://github.com/ferasxd1/UdaPlay---An-AI-Research-Agent-for-the-Video-Game-Industry.git
+cd UdaPlay---An-AI-Research-Agent-for-the-Video-Game-Industry
 ```
 
 2. **Install dependencies:**
@@ -209,9 +209,9 @@ This project is licensed under the MIT License.
 
 ## 👤 Author
 
-**Your Name**
-- GitHub: [@your-username](https://github.com/your-username)
-- LinkedIn: [Your Profile](https://linkedin.com/in/your-profile)
+**Feras Khairallah**
+- GitHub: [@ferasxd1](https://github.com/ferasxd1)
+- LinkedIn: [Feras Khairallah](https://www.linkedin.com/in/feras-khairallah-b51093278)
 
 ---
 
