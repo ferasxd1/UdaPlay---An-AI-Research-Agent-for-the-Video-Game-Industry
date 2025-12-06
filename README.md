@@ -1,43 +1,78 @@
 # 🎮 UdaPlay - AI Game Research Agent
 
-An intelligent AI agent designed to answer questions about video games using a two-tier information retrieval system combining RAG (Retrieval Augmented Generation) with web search capabilities.
+[![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)](https://www.python.org/)
+[![OpenAI](https://img.shields.io/badge/OpenAI-GPT--4o--mini-green.svg)](https://openai.com/)
+[![ChromaDB](https://img.shields.io/badge/ChromaDB-Vector%20Database-orange.svg)](https://www.trychroma.com/)
+[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![GitHub](https://img.shields.io/badge/GitHub-ferasxd1-black.svg)](https://github.com/ferasxd1)
 
-![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)
-![OpenAI](https://img.shields.io/badge/OpenAI-GPT--4o--mini-green.svg)
-![ChromaDB](https://img.shields.io/badge/ChromaDB-Vector%20Database-orange.svg)
-![License](https://img.shields.io/badge/License-MIT-yellow.svg)
+> An intelligent AI agent designed to answer questions about video games using a two-tier information retrieval system combining RAG (Retrieval Augmented Generation) with web search capabilities.
 
 ---
 
-## 📋 Project Overview
+## 📋 Table of Contents
+
+- [Project Overview](#-project-overview)
+- [Features](#-features)
+- [Demo](#-demo)
+- [Quick Start](#-quick-start)
+- [Project Structure](#-project-structure)
+- [Technical Stack](#️-technical-stack)
+- [Agent Workflow](#-agent-workflow)
+- [Example Queries](#-example-queries)
+- [Documentation](#-documentation)
+- [Author](#-author)
+- [License](#-license)
+
+---
+
+## 🎯 Project Overview
 
 UdaPlay is an AI Research Agent capable of:
-- **Answering questions** about video games (titles, release dates, platforms, genres, publishers)
-- **Two-tier information retrieval:**
-  - Primary: RAG over a local dataset using ChromaDB
-  - Secondary: Web search using Tavily API when internal knowledge is insufficient
-- **Robust evaluation system** to assess retrieval quality and determine when to use web search
-- **Generating clear, well-structured responses** with source citations
+- 🎮 **Answering questions** about video games (titles, release dates, platforms, genres, publishers)
+- 🔍 **Two-tier information retrieval:**
+  - **Primary:** RAG over a local dataset using ChromaDB
+  - **Secondary:** Web search using Tavily API when internal knowledge is insufficient
+- 📊 **Robust evaluation system** to assess retrieval quality and determine when to use web search
+- 📝 **Generating clear, well-structured responses** with source citations
 
 ---
 
 ## ✨ Features
 
-### Part 1: RAG Pipeline
-- ✅ ChromaDB vector database with persistent storage
-- ✅ OpenAI embeddings (text-embedding-ada-002)
-- ✅ 15 games indexed with full metadata
-- ✅ Semantic search functionality
+### 🗄️ Part 1: RAG Pipeline
+- ✅ **ChromaDB** vector database with persistent storage
+- ✅ **OpenAI embeddings** (text-embedding-ada-002)
+- ✅ **15 games** indexed with full metadata
+- ✅ **Semantic search** functionality
 
-### Part 2: Agent Implementation
+### 🤖 Part 2: Agent Implementation
 - ✅ **Three core tools:**
-  - `retrieve_game` - Search the vector database
-  - `evaluate_retrieval` - LLM-as-Judge for quality assessment
-  - `game_web_search` - Fallback to Tavily web search
-- ✅ State machine workflow for agent logic
-- ✅ Short-term conversation memory
-- ✅ Structured outputs using Pydantic
-- ✅ Source citations in all responses
+  - 🔍 `retrieve_game` - Search the vector database
+  - 📊 `evaluate_retrieval` - LLM-as-Judge for quality assessment
+  - 🌐 `game_web_search` - Fallback to Tavily web search
+- ✅ **State machine** workflow for agent logic
+- ✅ **Short-term memory** for conversation context
+- ✅ **Structured outputs** using Pydantic
+- ✅ **Source citations** in all responses
+
+---
+
+## 🎬 Demo
+
+### Example Interaction
+
+```python
+# Query: "When was Pokémon Gold and Silver released?"
+Agent Response:
+"Pokémon Gold and Silver was released in 1999 for Game Boy Color.
+Source: Internal Database (games/002.json)"
+
+# Query: "What is Rockstar Games working on right now?"
+Agent Response:
+"According to recent reports, Rockstar Games is currently working on...
+Source: Web Search (Tavily API)"
+```
 
 ---
 
@@ -58,11 +93,11 @@ cd UdaPlay---An-AI-Research-Agent-for-the-Video-Game-Industry
 
 2. **Install dependencies:**
 ```bash
-pip install -r Code/project/starter/requirements.txt
+pip install -r UdaPlay_Project_Submission/requirements.txt
 ```
 
 3. **Set up environment variables:**
-Create a `.env` file in `Code/project/starter/`:
+Create a `.env` file in `UdaPlay_Project_Submission/`:
 ```env
 OPENAI_API_KEY="your-openai-api-key"
 CHROMA_OPENAI_API_KEY="your-openai-api-key"
@@ -72,10 +107,10 @@ TAVILY_API_KEY="your-tavily-api-key"
 4. **Run the notebooks:**
 ```bash
 # First, run Part 1 to set up the RAG pipeline
-jupyter notebook Code/project/starter/Udaplay_01_solution_project.ipynb
+jupyter notebook UdaPlay_Project_Submission/Udaplay_01_solution_project.ipynb
 
 # Then, run Part 2 to test the agent
-jupyter notebook Code/project/starter/Udaplay_02_solution_project.ipynb
+jupyter notebook UdaPlay_Project_Submission/Udaplay_02_solution_project.ipynb
 ```
 
 ---
@@ -83,20 +118,28 @@ jupyter notebook Code/project/starter/Udaplay_02_solution_project.ipynb
 ## 📁 Project Structure
 
 ```
-udaplay-ai-agent/
-├── Code/
-│   └── project/
-│       └── starter/
-│           ├── Udaplay_01_solution_project.ipynb  # Part 1: RAG Pipeline
-│           ├── Udaplay_02_solution_project.ipynb  # Part 2: Agent
-│           ├── games/                              # 15 game JSON files
-│           ├── lib/                                # Helper libraries
-│           ├── requirements.txt                    # Dependencies
-│           └── .env.example                        # Environment template
-├── UdaPlay_Project_Submission/                     # Submission package
-├── ملخص_المشروع.md                                # Arabic summary
-├── كيفية_إنشاء_PDF.txt                            # PDF creation guide
-└── README.md                                       # This file
+UdaPlay-AI-Agent/
+├── 📄 README.md                                    # Project documentation
+├── 📄 ملخص_المشروع.md                             # Arabic summary
+├── 📦 UdaPlay_Final_Submission.zip                # Submission package
+├── 🗂️ UdaPlay_Project_Submission/
+│   ├── 📓 Udaplay_01_solution_project.ipynb       # Part 1: RAG Pipeline
+│   ├── 📓 Udaplay_02_solution_project.ipynb       # Part 2: Agent
+│   ├── 🌐 Udaplay_01_solution_project.html        # HTML with outputs
+│   ├── 🌐 Udaplay_02_solution_project.html        # HTML with outputs
+│   ├── 📁 games/                                   # 15 game JSON files
+│   │   ├── 001.json (Gran Turismo)
+│   │   ├── 002.json (Pokémon Gold/Silver)
+│   │   └── ... (13 more games)
+│   ├── 📁 lib/                                     # 13 Python helper files
+│   │   ├── agents.py
+│   │   ├── llm.py
+│   │   ├── state_machine.py
+│   │   └── ... (10 more files)
+│   ├── 📄 requirements.txt                         # Dependencies
+│   ├── 📄 .env.example                             # Environment template
+│   └── 📄 PROJECT_SUBMISSION_README.md            # Detailed documentation
+└── 🔒 .gitignore                                   # Git ignore rules
 ```
 
 ---
