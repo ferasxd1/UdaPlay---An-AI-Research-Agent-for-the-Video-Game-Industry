@@ -197,7 +197,6 @@ Is quality sufficient?
 ## 📄 Documentation
 
 - **[ملخص_المشروع.md](./ملخص_المشروع.md)** - Comprehensive Arabic summary
-- **[كيفية_إنشاء_PDF.txt](./كيفية_إنشاء_PDF.txt)** - Guide to create PDF from notebooks
 - **[PROJECT_SUBMISSION_README.md](./UdaPlay_Project_Submission/PROJECT_SUBMISSION_README.md)** - Detailed submission documentation
 
 ---
